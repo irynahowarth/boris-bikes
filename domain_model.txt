@@ -1,0 +1,23 @@
+Objects           |   Messages
+----------------------
+User              |
+Customer           | find_by_surname
+person             | use
+bike              | release a bike
+docking stations  | see if a bike is working
+
+
+
+Nouns: person, bike, docking station
+Verbs: use, release, see
+
+
+Objects       | Messages
+-------------------------
+Person
+bike          | working?
+DockingStation  | release_bike
+
+
+Bike <-- working? --> true/false
+DockingStation <-- release_bike --> a Bike

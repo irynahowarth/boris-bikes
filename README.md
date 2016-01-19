@@ -1,10 +1,10 @@
-                            Boris Bikes
+# Boris Bikes
 
-What is it?
+## What is it?
 
 It is a program that will manage the Boris Bikes system that will control and manipulate the bikes as they move around the city (including vans, repair staff etc.)
 
-Lastest version
+## Lastest version
 
 You can find the latest version at ....
 
