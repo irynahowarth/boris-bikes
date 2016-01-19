@@ -1,0 +1,5 @@
+type of error: NameError
+file path: /Users/username/.rvm/rubies/ruby-2.2.2/bin/irb'
+line number: 1
+NameError is raised when a given name is invalid or undefined.
+to solve this error, we can create a class called DockingStation.
