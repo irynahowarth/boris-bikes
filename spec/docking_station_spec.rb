@@ -18,14 +18,14 @@ describe DockingStation do
 
   it 'docks a bike' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to eq [bike]
   end
 
-  it { is_expected.to respond_to :bike }
+  it { is_expected.to respond_to :bikes }
 
   it 'shows bike' do
     bike = Bike.new
-    expect(subject.dock(bike)).to eq bike
+    expect(subject.dock(bike)).to eq [bike]
   end
 
   it { is_expected.to respond_to :bike_available? }
@@ -35,10 +35,15 @@ describe DockingStation do
   end
 
   it 'raises error when try to dock more than one bike' do
-    bike = Bike.new
-    subject.dock(bike)
+    20.times {subject.dock(Bike.new)}
     expect {subject.dock(Bike.new)}.to raise_error("Full station")
   end
+
+  it 'gives an empty array when initialize bikes' do
+    expect(subject.bikes).to eq []
+  end
+
+  #it { is_expected.to respond_to :initialize }
 end
 
 =begin
