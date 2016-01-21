@@ -7,16 +7,21 @@ class DockingStation
   end
   def release_bike
     #Bike.new
-    self.bike_available?
+    raise "No bikes available" if empty?
     @bikes.pop
   end
 
   def dock bike
-    raise "Full station" if @bikes.count >= 20
+    raise "Full station" if full?
     @bikes << bike
   end
 
-  def bike_available?
-    raise "No bikes available" if @bikes.empty?
+  private
+  def empty?
+    @bikes.empty?
+  end
+
+  def full?
+    @bikes.count >= 20
   end
 end

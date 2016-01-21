@@ -28,11 +28,12 @@ describe DockingStation do
     expect(subject.dock(bike)).to eq [bike]
   end
 
-  it { is_expected.to respond_to :bike_available? }
+  #it { is_expected.to respond_to :bike_available? }
 
   it 'raises error when no bikes available' do
-    expect {subject.bike_available?}.to raise_error("No bikes available")
+    expect {subject.release_bike}.to raise_error("No bikes available")
   end
+
 
   it 'raises error when try to dock more than one bike' do
     20.times {subject.dock(Bike.new)}
