@@ -1,7 +1,7 @@
 require "./lib/bike.rb"
-# in lib/docking_station.rb
+
 class DockingStation
-  attr_reader :bikes_docked
+    attr_reader :bikes_docked
 # def bikes_docked
 #   @bikes_docked
 # end
