@@ -19,7 +19,8 @@ describe DockingStation do
 
     it "returns true if a bike has been docked" do
       docking_station = DockingStation.new
-      newbike = docking_station.dock_bike
+      newbike = docking_station.dock_bike # newbike => "docking_station.dock_bike" returns => @bikes_docked => Bike.new
+                                          # newbike => Bike.new
       expect(docking_station.bikes_docked).to be_truthy
     end
        #it { respond_to(:dock_bike) }
