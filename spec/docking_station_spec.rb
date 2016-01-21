@@ -10,6 +10,11 @@ describe DockingStation do                              # describes behavior of 
       expect { subject.release_bike }.to raise_error 'No bikes available'
     end                                                 # :release_bike is the symbol
 
+    it "raises an error when the station is full" do
+      subject.dock(Bike.new)
+      expect { subject.dock(Bike.new)}.to raise_error 'This station is already full'
+    end
+
     # *
 
     it "responds to the method dock" do
