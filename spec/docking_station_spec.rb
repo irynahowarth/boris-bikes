@@ -1,12 +1,16 @@
-require 'docking_station'
+require 'docking_station' # requires the file "./lib/docking_station.rb"
 
-describe DockingStation do
-    it "responds to the method release_bike" do
+describe DockingStation do                              # describes behavior of a class e.g. DockingStation
+
+    it "responds to the method release_bike" do         # tests whether the instance responds when the method release_bike is called
       expect(subject).to respond_to(:release_bike)
-    end
-       # Another possibility to test this is a one-liner
-       # https://relishapp.com/rspec/rspec-core/docs/subject/one-liner-syntax
-       # it { respond_to(:release_bike) }
+    end     # subject is an instance of the class DockingStation
+
+    it "raises an error if Docking Station is empty" do
+      expect { subject.release_bike }.to raise_error 'No bikes available'
+    end                                                 # :release_bike is the symbol
+
+    # *
 
     it "responds to the method dock" do
       expect(subject).to respond_to(:dock).with(1).argument
@@ -26,3 +30,10 @@ describe DockingStation do
     end
 
 end
+
+
+# *
+# Another possibility to test this is a one-liner:
+# it { respond_to(:release_bike) }
+# -> https://relishapp.com/rspec/rspec-core/docs/subject/one-liner-syntax
+# *

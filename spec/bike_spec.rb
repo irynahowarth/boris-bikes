@@ -1,8 +1,9 @@
-require "bike"
+require "bike" # requires the file "./lib/bike.rb"
 
-describe Bike do 
+describe Bike do # describes the behavior of a class e.g. Bike
+
 	it "responds to the method working?" do
-		bike = Bike.new
-		expect(bike).to be_working
+		expect(Bike.new).to be_working
 	end
+
 end
